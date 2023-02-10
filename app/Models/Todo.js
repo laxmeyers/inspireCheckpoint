@@ -10,11 +10,11 @@ export class Todo {
     get TododTemplate() {
         return `
         <div class="form-check pb-1">
-              <input class="form-check-input" type="checkbox" id="${this.id}" name="description" ${this.completed? 'checked' : ''}>
-              <label class="form-check-label" for="${this.id}">
-                ${this.description}
-              </label>
-            </div>
+            <input class="form-check-input" type="checkbox" id="${this.id}" name="description" ${this.completed ? 'checked' : ''} onchange="app.todosController.checkItem('${this.id}')">
+            <label class="form-check-label" for="${this.id}">
+            ${this.description}
+            </label>
+        </div>
         `
     }
- }
+}
