@@ -37,21 +37,30 @@
   }
 </style>
 
-<body class="debug">
+<body class="debg">
   <header>
 
   </header>
-  <main class="bg-dark">
-    <div class="container">
+  <main class="">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-4 m-auto text-center">
-          <h1 class="text-light" id="time"></h1>
+        <div class="col-2 position-fixed glass-card text-center rounded">
+          Painter:
+          <h1 class="fs-5" id="painter"></h1>
+        </div>
+        <div class="col-3 m-auto text-center">
+          <h1 class="text-dark glass-card rounded" id="time"></h1>
         </div>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row m-3 justify-content-end">
-        <div class="col-md-3 bg-light">
+      <div class="row my-3 justify-content-between align-items-center">
+        <div class="col-2 glass-card text-center rounded selectable no-select" onclick="app.weatherController.changeType()">
+          <div>
+            <h1><span id="weather"></span></h1>
+          </div>
+        </div>
+        <div class="col-md-3 glass-card rounded">
           <div class="d-flex justify-content-between">
             <h1 class="fs-5 text-center">Your Goals</h1>
             <span id="goalCount"></span>
@@ -77,13 +86,16 @@
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center text-light">
-      <div>
-        <p id="quote"></p>
-        <p id="author" class="on-hover"></p>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-7 text-center m-auto">
+          <div class="glass-card fw-bold text-dark p-3 rounded">
+            <p id="quote"></p>
+            <p id="author" class="on-hover"></p>
+          </div>
+        </div>
       </div>
-      
     </div>
   </footer>
 
