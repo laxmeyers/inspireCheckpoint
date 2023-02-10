@@ -10,6 +10,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
     integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>inspireCheckpoint</title>
@@ -23,7 +27,10 @@
     <div class="container-fluid">
       <div class="row m-3 justify-content-end">
         <div class="col-md-3 bg-light">
-          <h1 class="fs-5 text-center">Your Goals</h1>
+          <div class="d-flex justify-content-between">
+            <h1 class="fs-5 text-center">Your Goals</h1>
+            <span id="goalCount"></span>
+          </div>
           <div id="todos">
             <h2 class="fs-5 text-center text-warning">Make a Goal to start making progress!!!</h2>
             <!-- <div class="form-check pb-1">
@@ -33,7 +40,7 @@
               </label>
             </div> -->
           </div>
-          <form class="pb-2" onsubmit="app.todosController.handleTodoForm()">
+          <form class="py-2" onsubmit="app.todosController.handleTodoForm()">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="goal" placeholder="make bed" name="description" required
                 minlength="1" maxlength="20">

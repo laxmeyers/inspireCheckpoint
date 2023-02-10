@@ -3,11 +3,21 @@ import { Todo } from "../Models/Todo.js";
 import { sandboxApi } from "./AxiosService.js"
 
 class TodosService {
+    async destroyGoal(id) {
+        const res = sandboxApi.delete('andrew/todos/' + id)
+        let index = appState.todos.findIndex(t => t.id == id)
+        appState.todos.splice(index, 1)
+        appState.emit('todos')
+    }
     async checkItem(id) {
-        let checkedGoal = appState.todos.find(t => t.id == id)
+        let checkedIndex = appState.todos.findIndex(t => t.id == id)
+        let checkedGoal = appState.todos[checkedIndex]
         // @ts-ignore
         checkedGoal.completed = !(checkedGoal?.completed)
         const res = sandboxApi.put('andrew/todos/' + id, checkedGoal)
+
+        appState.todos.splice(checkedIndex, 1, checkedGoal)
+        appState.emit('todos')
         
     }
     async handleTodoForm(formData) {
