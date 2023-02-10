@@ -17,19 +17,30 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">inspireCheckpoint</span>
-      </a>
-    </nav>
+
   </header>
-  <main>
+  <main class="bg-dark">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+      <div class="row m-3 justify-content-end">
+        <div class="col-md-3 bg-light">
+          <h1 class="fs-5 text-center">Your Goals</h1>
+          <div id="todos">
+            <h2 class="fs-5 text-center text-warning">Make a Goal to start making progress!!!</h2>
+            <!-- <div class="form-check pb-1">
+              <input class="form-check-input" type="checkbox" id="goalId" name="name">
+              <label class="form-check-label" for="goalId">
+                Default checkbox
+              </label>
+            </div> -->
+          </div>
+          <form class="pb-2" onsubmit="app.todosController.handleTodoForm()">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="goal" placeholder="make bed" name="goal" required
+                minlength="1" maxlength="20">
+              <label for="goal">Goal</label>
+            </div>
+            <div class=" text-end"><button class="btn btn-success" type="submit">Make Goal</button></div>
+          </form>
         </div>
       </div>
     </div>
@@ -39,6 +50,10 @@
       <p><small>Made with 💖 by CodeWorks</small></p>
     </div>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
