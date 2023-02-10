@@ -19,7 +19,7 @@ export class Todo {
                 </div>
                 <i class="mdi mdi-delete-outline selectable text-danger fw-bold fs-3" onclick="app.todosController.destroyGoal('${this.id}')"></i>
             </div>
-            ` 
+            `
         } else {
             return `
             <div class="d-flex justify-content-between align-items-center border-bottom border-2 border-primary">
@@ -35,5 +35,5 @@ export class Todo {
         }
     }
 
-    
+
 }
